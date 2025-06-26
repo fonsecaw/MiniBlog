@@ -9,7 +9,7 @@ const CreatePost = () => {
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
   const [body, setBody] = useState('');
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState('');
   const [formErrors, setFormErrors] = useState('');
 
   const { insertDocument, response } = useInsertDocument('posts');
@@ -43,11 +43,6 @@ const CreatePost = () => {
       uid: user.uid,
       createdBy: user.displayName
     })
-
-    setTitle('');
-    setImage('');
-    setBody('');
-    setTags([]);
 
     navigate('/');
   }
